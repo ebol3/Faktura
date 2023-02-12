@@ -2,6 +2,8 @@ package main;
 
 import java.util.Iterator;
 import java.util.Calendar;
+
+import druk.Druk;
 import magazyn.Towar;
 
 import dokumenty.Faktura;
@@ -30,7 +32,8 @@ public class Ui {
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 		
-		wypiszFakture(f);
+		Druk.wypiszFakture(f);
+//		wypiszFakture(f);
 
 		
 		//TEST ZEWN. rabatu
