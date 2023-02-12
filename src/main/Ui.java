@@ -4,10 +4,13 @@ import java.util.Iterator;
 import java.util.Calendar;
 
 import druk.Druk;
+import kategoria.Kategoria;
+import kategoria.KategoriaProsta;
+import kategoria.KategoriaZlozona;
 import magazyn.Towar;
 
 import dokumenty.Faktura;
-import dokumenty.Pozycja;
+//import dokumenty.Pozycja;
 
 //ZEWNETRZNY RABAT
 import rabatlosowy.LosowyRabat;
@@ -39,20 +42,41 @@ public class Ui {
 		//TEST ZEWN. rabatu
 		LosowyRabat lr=new LosowyRabat();
 		System.out.println(lr.losujRabat());
-	}
-	private static void wypiszFakture(Faktura faktura)
-	{
-		System.out.println("=====================================================");
-		System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
-		System.out.println("Wystawiona dla: "+faktura.getKontrahent());
-		System.out.println("Na kwote: "+faktura.getSuma());
-		Iterator<Pozycja> iteratorPozycji=faktura.getIteratorPozycji();
-		while(iteratorPozycji.hasNext())
-		{
-			Pozycja pozycja=iteratorPozycji.next();
-			System.out.println("Towar: "+pozycja.getNazwa()+" Ilosc: "+pozycja.getIlosc()+" Wartosc:" + pozycja.getWartosc());
-		}
-		System.out.println("=====================================================");
-	}
+
+
+
+	KategoriaProsta k1 = new KategoriaProsta("bestseler");
+	KategoriaProsta k2 = new KategoriaProsta("dladzieci");
+
+	KategoriaZlozona kz2 = new KategoriaZlozona();
+	KategoriaProsta kol1 = new KategoriaProsta("zielony");
+	KategoriaProsta kol2 = new KategoriaProsta("czerwony");
+
+	kz2.dodajKategorie(kol1);
+	kz2.dodajKategorie(kol2);
+
+	KategoriaZlozona kz1 = new KategoriaZlozona();
+	kz1.dodajKategorie(k1);
+	kz1.dodajKategorie(k2);
+	kz1.dodajKategorie(kz2);
+
+	kz1.wypiszNazwe();
+
+}
+
+//	private static void wypiszFakture(Faktura faktura)
+//	{
+//		System.out.println("=====================================================");
+//		System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
+//		System.out.println("Wystawiona dla: "+faktura.getKontrahent());
+//		System.out.println("Na kwote: "+faktura.getSuma());
+//		Iterator<Pozycja> iteratorPozycji=faktura.getIteratorPozycji();
+//		while(iteratorPozycji.hasNext())
+//		{
+//			Pozycja pozycja=iteratorPozycji.next();
+//			System.out.println("Towar: "+pozycja.getNazwa()+" Ilosc: "+pozycja.getIlosc()+" Wartosc:" + pozycja.getWartosc());
+//		}
+//		System.out.println("=====================================================");
+//	}
 
 }
