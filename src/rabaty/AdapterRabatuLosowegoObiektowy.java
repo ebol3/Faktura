@@ -14,6 +14,6 @@ public class AdapterRabatuLosowegoObiektowy implements IObliczCenePoRabacie {
     public double obliczCenePoRabacie(double cena) {
         double procentRabatuLosowy = lr.losujRabat()/10;
 
-        return cena = cena + procentRabatuLosowy;
+        return cena -= cena * procentRabatuLosowy;
     }
 }

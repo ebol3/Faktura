@@ -1,8 +1,6 @@
 package main;
 
-import rabaty.IObliczCenePoRabacie;
-import rabaty.ObliczCenePoRabacieKwotowym;
-import rabaty.ObliczCenePoRabacieProcentowym;
+import rabaty.*;
 
 public class Konfiguracja {
     private static Konfiguracja instance;
@@ -26,7 +24,9 @@ public class Konfiguracja {
         return 25;
     }
     public IObliczCenePoRabacie getBiezacyRabat(){
-        return new ObliczCenePoRabacieProcentowym();
+//        return new ObliczCenePoRabacieProcentowym();
 //        return new ObliczCenePoRabacieKwotowym();
+//        return new AdapterRabatuLosowegoObiektowy();
+        return new AdapterRabatuLosowegoKlasowy();
     }
 }
