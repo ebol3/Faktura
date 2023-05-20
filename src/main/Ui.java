@@ -17,6 +17,8 @@ import rabatlosowy.LosowyRabat;
 import rabaty.ObliczCenePoRabacieKwotowym;
 import rabaty.ObliczCenePoRabacieProcentowym;
 
+import static druk.Druk.wypiszFakture;
+
 
 public class Ui {
 
@@ -35,7 +37,7 @@ public class Ui {
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 		
-		Druk.wypiszFakture(f);
+		f.wypiszFakture();
 //		wypiszFakture(f);
 
 		

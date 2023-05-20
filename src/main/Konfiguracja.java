@@ -1,5 +1,7 @@
 package main;
 
+import druk.Drukuj;
+import druk.Drukuj1;
 import rabaty.*;
 
 public class Konfiguracja {
@@ -28,5 +30,8 @@ public class Konfiguracja {
 //        return new ObliczCenePoRabacieKwotowym();
 //        return new AdapterRabatuLosowegoObiektowy();
         return new AdapterRabatuLosowegoKlasowy();
+    }
+    public Drukuj getSposobDruku() {
+        return new Drukuj1();
     }
 }

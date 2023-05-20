@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Date;
 
+import druk.Drukuj;
 import magazyn.Towar;
 import main.Konfiguracja;
 import rabaty.IObliczCenePoRabacie;
@@ -16,6 +17,9 @@ public class Faktura {
 	ArrayList<Pozycja> pozycje;
 	double suma;
 	IObliczCenePoRabacie liczarkaRabatu;
+
+	private Konfiguracja k;
+	Drukuj drukuj = k.getSposobDruku();
 	public Faktura(Date dataSprzedazy,String kontrahent)
 	{
 		this.dataSprzedazy=dataSprzedazy;
@@ -66,6 +70,9 @@ public class Faktura {
 	public String getKontrahent()
 	{
 		return this.kontrahent;
+	}
+	public void wypiszFakture(){
+		drukuj.wypiszFakture(this);
 	}
 	
 	
