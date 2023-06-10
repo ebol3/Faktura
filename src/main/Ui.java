@@ -50,14 +50,14 @@ public class Ui {
 	KategoriaProsta k1 = new KategoriaProsta("bestseler");
 	KategoriaProsta k2 = new KategoriaProsta("dladzieci");
 
-	KategoriaZlozona kz2 = new KategoriaZlozona();
+	KategoriaZlozona kz2 = new KategoriaZlozona("Książki");
 	KategoriaProsta kol1 = new KategoriaProsta("zielony");
 	KategoriaProsta kol2 = new KategoriaProsta("czerwony");
 
 	kz2.dodajKategorie(kol1);
 	kz2.dodajKategorie(kol2);
 
-	KategoriaZlozona kz1 = new KategoriaZlozona();
+	KategoriaZlozona kz1 = new KategoriaZlozona("Książki");
 	kz1.dodajKategorie(k1);
 	kz1.dodajKategorie(k2);
 	kz1.dodajKategorie(kz2);
